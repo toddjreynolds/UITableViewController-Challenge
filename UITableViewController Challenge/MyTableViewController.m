@@ -54,14 +54,21 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
+
+    cell.backgroundColor = [UIColor lightGrayColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
     if (indexPath.section == 0) {
         cell.textLabel.text = @"I am in Section 0";
+        cell.backgroundColor = [UIColor redColor];
     }
     else if (indexPath.section == 1) {
         cell.textLabel.text = @"Another section";
+        cell.backgroundColor = [UIColor yellowColor];
+        cell.textLabel.textColor = [UIColor brownColor];
     }
     else {
-        cell.textLabel.text = [NSString stringWithFormat:@"This is cell %ld of section %i", (long)indexPath.row, indexPath.section];
+        cell.textLabel.text = [NSString stringWithFormat:@"This is cell %ld of section %li", (long)indexPath.row, (long)indexPath.section];
+        cell.backgroundColor = [UIColor blueColor];
     }
     return cell;
 }
